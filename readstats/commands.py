@@ -15,3 +15,4 @@ def parse_commands():
     parser.add_argument("-sr", "--shortest-review", action="store_true", help="Display the shortest review the user has written and the name of the book")
     parser.add_argument("-lr", "--longest-review", action="store_true", help="Display the longest review the user has written and for which book")
     return parser
+command_args = parse_commands().parse_args()    
