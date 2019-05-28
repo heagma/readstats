@@ -10,29 +10,36 @@ import collections
 class Users:
    
     def __init__(self, name):
-        """Instantiate user data to use with other methods"""
+        """Instantiate user data """
         self.name = name
         #self.email = email
 
     def search_user(self):
         """Search if an user name exist on Goddreads Database
         Parameters: self
-        Return: url"""
+        Return: name"""
         
         if getdata.page_main.status_code == 200: 
             print(f"The User {username.name} EXIST in GoodReads", 
             "Now get a few stats with the optional parameters [-AagTtbrsrlr]", 
             "EXAMPLE: 'heagma -a' to look for favorite Authors ", sep="\n") 
         else:
-             print(f"The User {username.name} DOESN'T EXIST in GoodReads", "Please Try another User", sep="\n")#como puedes ver usamos name e email the lo instaciado arriba
+             print(f"The User {username.name} DOESN'T EXIST in GoodReads", "Please Try another User", sep="\n")
         return self.name
 
     def get_all_stats(self):
-        return True
+        pass
     
     def get_authors(self):
-        """Get the most read atuthors and how many books
-        Return: Authors"""
+        """Get the favorite authors and how many books
+
+        Parameters:
+        argument1 (obj): self
+
+        Returns:
+        list: the authors
+
+       """
         authors = []
         for author in getdata.parsed_read_shelf.find_all("td", class_="field author"):
             authors.append(author.get_text().strip("author").strip("*").strip("\n*").strip())
@@ -43,6 +50,15 @@ class Users:
         return authors
     
     def get_genres(self):
+        """Get the favorite genres
+
+        Parameters:
+        argument1 (obj): self
+
+        Returns:
+        list: the favorite genres
+
+       """
         user = command.user
         fav_genres = []
         num_books = 0
@@ -51,22 +67,67 @@ class Users:
         return True
     
     def get_longest_review(self):
-        return True
+        """Get the longest review written by the user
+
+        Parameters:
+        argument1 (obj): self
+
+        Returns:
+        list: the longest review
+
+       """
+        pass
     
     def get_shortest_review(self):
+        """Get the shortest review written by the user
 
-        return True
+        Parameters:
+        argument1 (obj): self
+
+        Returns:
+        list: the shortest review
+
+       """
+
+        pass
     
     def get_liked_review(self):
+        """Get the most liked review written by the user
 
-        return True
+        Parameters:
+        argument1 (obj): self
+
+        Returns:
+        list: the most liked review
+
+       """
+
+        pass
     
-    def get_less_time(self):   
+    def get_less_time(self):
+        """Get the book who took less time to read
+
+        Parameters:
+        argument1 (obj): self
+
+        Returns:
+        str: the name of the book
+
+       """   
  
-        return True
+        pass
     
     def get_more_time(self):
-        return True
+        """Get the book who took more time to read
+
+        Parameters:
+        argument1 (obj): self
+
+        Returns:
+        str: the name of the book
+
+       """
+        pass
 
     
 
@@ -75,7 +136,6 @@ class Users:
 if __name__ == "__main__":
     command = commands.command_args
     username = Users(command.user)
-    #no need at the moment ya que siendo posicionalargument es necesario para entrar otro argumetoopcional
     #if command_args.genre: #If we use Optional commands before --user 
     #    parser.print_help(sys.stderr) # Then print the error, print_help() is a verbose function 
     #    sys.exit(1)
