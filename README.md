@@ -8,7 +8,9 @@ With readstats you will get some other information that is not actually availabl
 
 # How to use it
 
-readstats <username>  -option 
+
+    readstats <username>  -option 
+
 
 Example: 
 Check if an username url exist on the platform:
