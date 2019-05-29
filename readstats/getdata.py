@@ -1,10 +1,7 @@
-#USANDO
 from bs4 import BeautifulSoup
 import requests
 import commands
 
-GOODREADS_API_KEY = "rWVxni6Fs5R4BqXzCQXLnQ"
-GOODREADS_API_SECRET = "sofV7rRnOTgMF8miNmVAUXSUz4gXEZigLvASCE4Y3Y"
 goodreads_url = "https://www.goodreads.com/"
 # The one you write on the url to check an username url
 main_url = goodreads_url + commands.command_args.user
